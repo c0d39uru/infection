@@ -3,12 +3,23 @@
     "source": {
         "directories": [
             "src"
+        ],
+        "excludes": [
+            "config"
         ]
     },
     "logs": {
-        "text": "infection.log"
+        "text": "reports/logs/text.log",
+        "summary": "reports/logs/summary.log",
+        "debug": "reports/logs/debug.log",
+        "perMutator": "reports/per-mutator.md"
     },
+    "tmpDir": "reports/temp",
     "mutators": {
         "@default": true
-    }
+    },
+    "testFramework": "phpunit",
+    "bootstrap": "./vendor/autoload.php",
+    "initialTestsPhpOptions": "-d zend_extension=xdebug.so",
+    "testFrameworkOptions": "-vvv"
 }
